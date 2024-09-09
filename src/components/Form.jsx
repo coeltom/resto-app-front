@@ -46,12 +46,12 @@ export default function Component() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md my-5">
+    <div className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="space-y-2">
             <Label htmlFor="where" className="block">
-              Where?
+              Donde?
             </Label>
             <Input
               id="where"
@@ -62,7 +62,7 @@ export default function Component() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="when" className="block">
-              When?
+              Cuando?
             </Label>
             <Popover>
               <PopoverTrigger asChild>
@@ -76,7 +76,7 @@ export default function Component() {
                   {form.watch('when') ? (
                     format(form.watch('when'), 'PPP')
                   ) : (
-                    <span>Pick a date</span>
+                    <span>Elije una fecha</span>
                   )}
                   <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                 </Button>
@@ -96,7 +96,7 @@ export default function Component() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="howMany" className="block">
-              How Many?
+              Cuantos?
             </Label>
             <Input
               id="howMany"
@@ -108,7 +108,7 @@ export default function Component() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="whatTime" className="block">
-              What Time?
+              A que hora?
             </Label>
             <div className="relative">
               <Input
@@ -124,7 +124,7 @@ export default function Component() {
         </div>
         <div className="flex justify-end">
           <Button type="submit" className="w-full md:w-auto">
-            Submit
+            Enviar
           </Button>
         </div>
       </form>
