@@ -11,7 +11,7 @@ import RestaurantCard from '../components/RestaurantCard';
 
 const page = () => {
   return (
-    <>
+    <div className="container mx-auto">
       <Form />
       <CategoriesBoard />
       <Carousel
@@ -29,10 +29,12 @@ const page = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <div className="hidden sm:block">
+          <CarouselPrevious />
+          <CarouselNext />
+        </div>
       </Carousel>
-    </>
+    </div>
   );
 };
 

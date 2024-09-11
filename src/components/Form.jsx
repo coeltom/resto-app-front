@@ -55,7 +55,7 @@ export default function Component() {
             </Label>
             <Input
               id="where"
-              placeholder="Location"
+              placeholder="Ubicacion"
               {...form.register('where')}
               className="w-full"
             />
@@ -74,7 +74,7 @@ export default function Component() {
                     !form.watch('when') && 'text-muted-foreground'
                   )}>
                   {form.watch('when') ? (
-                    format(form.watch('when'), 'PPP')
+                    format(form.watch('when'), 'P')
                   ) : (
                     <span>Elije una fecha</span>
                   )}
@@ -87,7 +87,8 @@ export default function Component() {
                   selected={form.watch('when')}
                   onSelect={date => form.setValue('when', date)}
                   disabled={date =>
-                    date < new Date() || date < new Date('1900-01-01')
+                    date < new Date(Date.now() - 3600 * 1000 * 24) ||
+                    date < new Date('1900-01-01')
                   }
                   initialFocus
                 />
@@ -101,7 +102,7 @@ export default function Component() {
             <Input
               id="howMany"
               type="number"
-              placeholder="Number of people"
+              placeholder="Cantidad de personas"
               {...form.register('howMany')}
               className="w-full"
             />
