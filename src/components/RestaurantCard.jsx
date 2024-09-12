@@ -3,7 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Star } from 'lucide-react';
 
-export default function Component() {
+export default function RestaurantCard({ title, rating, category, price }) {
   return (
     <Card className="w-80">
       <CardContent className="p-0">
@@ -14,20 +14,20 @@ export default function Component() {
         />
         <div className="p-4">
           <div className="flex justify-between items-start mb-2">
-            <h2 className="text-xl font-semibold">Delicious Bites</h2>
+            <h2 className="text-xl font-semibold">{title}</h2>
             <Badge variant="secondary" className="text-lg font-semibold">
-              $$
+              {price}
             </Badge>
           </div>
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
-              <span className="font-semibold mr-2">4.5</span>
+              <span className="font-semibold mr-2">{rating}</span>
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
                     className={`w-4 h-4 ${
-                      i < 4
+                      i < rating
                         ? 'text-yellow-400 fill-yellow-400'
                         : 'text-gray-300'
                     }`}
@@ -37,7 +37,7 @@ export default function Component() {
             </div>
           </div>
           <div className="flex items-center text-sm text-gray-600 mb-4">
-            <span className="mr-2">Italian</span>
+            <span className="mr-2">{category}</span>
             <span>•</span>
             <span className="ml-2">Restaurant</span>
           </div>
