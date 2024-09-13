@@ -2,15 +2,17 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Star } from 'lucide-react';
+import Image from 'next/image';
 
 export default function RestaurantCard({ title, rating, category, price }) {
   return (
     <Card className="w-80">
       <CardContent className="p-0">
-        <img
-          src="/placeholder.svg?height=200&width=320"
+        <Image
+          src="https://placehold.co/600x400/png"
           alt="Restaurant"
-          className="w-full h-48 object-cover"
+          width={600}
+          height={400}
         />
         <div className="p-4">
           <div className="flex justify-between items-start mb-2">
